@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: gitub
+  repo: mralbor/blog
   
 
 media_folder: static/assets
@@ -7,11 +8,11 @@ public_folder: assets
 
 collections:
   - name: blog
-    label: Article
+    label: Posts
     folder: blog
     create: true
     fields:
       - { name: slug, label: Slug }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { name: body, label: Body, widget: markdown } 
