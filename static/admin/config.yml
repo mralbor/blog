@@ -1,5 +1,5 @@
 backend:
-  name: gitub
+  name: github
   repo: mralbor/blog
   
 
