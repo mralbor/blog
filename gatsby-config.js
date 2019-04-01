@@ -1,11 +1,34 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Titre du Blog depuis config metadata`,
+    description: `description depuis les metadatas.`,
+    author: `@Johann the author depuis metadata`,
+    authorImage: `https://celebvogue.com/wp-content/uploads/2017/10/Gemma-150x150.jpg`,
+    biographie:`ceci est ma bio depuis le fichier config sitemetadata`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {name: `blog`,path:`${__dirname}/blog/`},
+      },
+      `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-plugin-less",
+      options: {
+        modifyVars: require("./src/theme/antd.js"),
+        // Needed to load antdesign less files.
+        javascriptEnabled: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-antd",
+      options: {
+        // Activate less files
+        style: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
